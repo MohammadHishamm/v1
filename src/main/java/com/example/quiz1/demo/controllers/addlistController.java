@@ -27,7 +27,7 @@ public class addlistController {
     @Autowired
     private FruitRepository fruitrepository;
 
-    @GetMapping("/")
+    @GetMapping("")
     public ModelAndView getfruits() {
         ModelAndView mav = new ModelAndView("list.html");
         List<fruit> fruits = this.fruitrepository.findAll();
@@ -89,7 +89,7 @@ public class addlistController {
         fruitrepository.save(existingFruit); // Assuming you have a service method to save/update a fruit
     
         // Redirect to a success page or back to the list of fruits
-        return new RedirectView("");  // Assuming you have a mapping for listing fruits
+        return new RedirectView("/fruits");  // Assuming you have a mapping for listing fruits
     }
 
 @PostMapping("delete")
@@ -98,7 +98,7 @@ public class addlistController {
         
         
             fruitrepository.deleteById(fruits.getID());
-            return new RedirectView(""); // Redirect to the list of fruits after deletion
+            return new RedirectView("/fruits"); // Redirect to the list of fruits after deletion
        
     }
 
