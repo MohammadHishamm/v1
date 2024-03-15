@@ -1,0 +1,22 @@
+<html xmlns:th="http://wwww.thymleaf.org">
+<head>
+<title> Add </title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>Add Food</h2>
+<form th:action="@{/addFood}" th:object="${food}" method="POST">
+Select Category: <select th:field="*{category}">
+<option th:each="x : ${allCategories}" th:text="${x.name}" th:value="${x.id}">
+</select>
+<br> <br>
+<input type="text" th:field="*{name}" placeholder="Enter Food name">
+<br> <br>
+<input type="text" th:field="*{price}" value="5" placeholder="Enter Price">
+<br> <br>
+<input type="submit">
+<br> <br>
+</form>
+<a href="/">Go to Home</a>
+</body>
+</html>

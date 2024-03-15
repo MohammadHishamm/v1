@@ -1,0 +1,20 @@
+<html xmlns:th="http://wwww.thymleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/reg.css}">
+<title>
+Registration
+</title>
+</head>
+<body>
+<h2>User Registration</h2>
+<form th:action="@{/User/Registration}" th:object="${user}" method="POST">
+<input type="text" th:field="*{name}" placeholder="Enter Name">
+<input type="text" th:field="*{username}" placeholder="Enter UserName">
+<input type="password" th:field="*{password}" placeholder="Enter Passwrd">
+<input type="date" th:field="*{dob}" placeholder="Enter DOB">
+
+<input type="submit">
+
+</form>
+</body>
+</html>

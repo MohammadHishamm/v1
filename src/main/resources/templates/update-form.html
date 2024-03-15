@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Fruit</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Update Fruit</h2>
+        <form action="/fruits/update-fruit" method="post">
+            <div class="form-group">
+                <input name="id" hidden th:value="${fruit.ID}">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" th:value="${fruit.name}" required>
+            </div>
+            <div class="form-group">
+                <label for="color">Color</label>
+                <input type="text" class="form-control" id="color" name="color" th:value="${fruit.color}" required>
+            </div>
+            <!-- Add more fields as needed -->
+            <button type="submit" class="btn btn-primary">Update Fruit</button>
+        </form>
+    </div>
+</body>
+</html>

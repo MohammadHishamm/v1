@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymleaf.org">
+<h1>List fruits</h1>
+<table>
+    <thead><tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Color</th>
+    </tr></thead>
+    <tbody><tr th:each="fruit:${fruits}">
+        <td th:text="${fruit.ID}"></td>
+        <td th:text="${fruit.name}"></td>
+        <td th:text="${fruit.color}"></td>
+        <td><a th:href="@{/fruits/update-fruit/{fruitId}(fruitId=${fruit.ID})}">Update</a></td>
+        <form action="/fruits/delete" method="post">
+            <input  name="id"hidden th:value="${fruit.ID}">
+        <td><button type="submit" >delete</button></td>
+    </form>
+    </tr></tbody>
+
+</table>
+</html>

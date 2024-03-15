@@ -1,0 +1,18 @@
+<html xmlns:th="http://wwww.thymleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/log.css}">
+<title>
+Login
+</title>
+</head>
+<body>
+<h2>User Login</h2>
+<form th:action="@{/User/Login}" th:object="${user}" method="POST">
+<input type="text" th:field="*{username}" placeholder="Enter UserName">
+<input type="password" th:field="*{password}" placeholder="Enter Passwrd">
+
+<input type="submit">
+
+</form>
+</body>
+</html>
